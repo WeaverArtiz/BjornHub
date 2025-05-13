@@ -1,0 +1,39 @@
+.AAllowBox{
+  position: fixed;
+  width: 60%;
+  height: 50%;
+  background-color: rgba(20, 20, 20, 0.95);
+  color: #a9c6ff;
+  margin-left: 20%;
+  margin-top: 10%;
+  border: 3px solid #ac4402;
+  border-radius: 10px;
+}
+.AAllowBox p{
+  text-align: center;
+  padding-top: 10%;
+  font-size: 22px;
+}
+.AAllowBox .bbox{
+  height: 100px;
+  display: flex;       
+  align-items: center;
+  justify-content:space-around;
+}
+.AAllowBox button{
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #ac4402;
+  border-radius: 5px;
+  background-color: #404040;
+  color: #a9c6ff;
+  transition: ease-in 0.2s;
+}
+.AAllowBox button:hover{
+  background-color: #808080;
+  transition: ease-in-out 0.4s;
+  border: 2px solid #bc5512;
+  cursor: pointer;
+}
+
+

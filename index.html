@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset = "utf-8">
+  <link rel="stylesheet", href = "styles/style.css">
+  <link rel="stylesheet", href = "styles/AAllowbox.css">
+  <link rel="stylesheet", href = "styles/carousell.css">
+  <link rel="stylesheet", href = "styles/gallery.css">
+  <title>BjörnHub</title>
+  
+
+</head>
+
+<body>  
+  <audio loop id = "BjornSong">
+      <source src="assets/Start.mp3" type="audio/mpeg"> 
+  </audio>
+    
+  <div class="AAllowBox" id="AAllowBox">
+      <p>This page requires audio in order to provide intended experience.</p>
+    <div class ="bbox">
+    <button id="audioBtn" class="audioBtn">Go</button>
+    <button id="leaveBtn" class="audioBtn">Leave Page</button>
+    </div>
+  </div>
+  <script>
+  const startBtn = document.getElementById('audioBtn');
+  const audio = document.getElementById('BjornSong');
+  const box = document.getElementById('AAllowBox');
+  const leaveBtn = document.getElementById('leaveBtn');
+  startBtn.addEventListener('click', () => {
+    audio.play()
+    startBtn.style.display = 'none';
+    box.style.display = 'none';
+  });
+  leaveBtn.addEventListener('click', () => {
+    window.location.href = "https://www.google.com"
+  });
+</script>
+    
+ <header>
+      <div class="master">
+        <div class="logo">
+          <img src="assets/BhubTS.png" alt="Logo">
+        </div>
+        <div class="search">
+          <input type="text" name="search">
+        </div>
+        <div class="login">
+          <button type="button">Sign In</button>
+          <button type="button">Sign Up</button>
+        </div> 
+      </div>
+
+      <nav>
+        <div class="current"><a>Home</a></div>
+        <div><a href="bjornStars.html">Björnstars</a></div>
+        <div><a href="datingSim.html">Dating Sim</a></div>
+        <div><a>Community</a></div>
+      </nav>
+  </header>
+
+  <main>
+    <div class="carousell">
+      <div class="slide">
+        <img src="assets/B1.png">
+      </div>
+      <div class="slide">
+        <img src="assets/B2.png">
+      </div>
+      <div class="slide">
+        <img src="assets/B3.png">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="column">
+        <a><img src="assets/imgs/i1.jpg"></a>
+        <a><img src="assets/imgs/i2.jpg"></a>
+        <a><img src="assets/imgs/i3.png"></a>
+        <a><img src="assets/imgs/i4.jpg"></a>
+      </div>
+      <div class="column">
+        <a><img src="assets/imgs/i2.jpg"></a>
+        <a><img src="assets/imgs/i3.png"></a>
+        <a><img src="assets/imgs/i4.jpg"></a>
+        <a><img src="assets/imgs/i1.jpg"></a>
+      </div>
+      <div class="column">
+        <a><img src="assets/imgs/i2.jpg"></a>
+        <a><img src="assets/imgs/i2.jpg"></a>
+        <a><img src="assets/imgs/i3.png"></a>
+        <a><img src="assets/imgs/i1.jpg"></a>
+      </div>
+      <div class="column">
+        <a><img src="assets/imgs/i1.jpg"></a>
+        <a><img src="assets/imgs/i4.jpg"></a>
+        <a><img src="assets/imgs/i2.jpg"></a>
+        <a><img src="assets/imgs/i4.jpg"></a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <h3> BjörnHub © 2025 </h3>   
+    </div>
+  </footer>
+</body>
+</html> 
