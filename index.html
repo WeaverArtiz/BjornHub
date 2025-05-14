@@ -25,6 +25,7 @@
   </div>
   <script>
   const startBtn = document.getElementById('audioBtn');
+  
   const audio = document.getElementById('BjornSong');
   const box = document.getElementById('AAllowBox');
   const leaveBtn = document.getElementById('leaveBtn');
@@ -61,15 +62,13 @@
   </header>
 
   <main>
-    <div class="carousell">
-      <div class="slide">
-        <img src="assets/B1.png">
-      </div>
-      <div class="slide">
-        <img src="assets/B2.png">
-      </div>
-      <div class="slide">
-        <img src="assets/B3.png">
+    <div class="carousell" style="--quantity: 5;">
+      <div class="slider">
+        <div class="slide" style="--position:1;"><img src="assets/B1.png"></div>
+        <div class="slide" style="--position:2;"><img src="assets/B2.png"></div>
+        <div class="slide" style="--position:3;"><img src="assets/B3.png"></div>
+        <div class="slide" style="--position:4;"><img src="assets/B4.png"></div>
+        <div class="slide" style="--position:5;"><img src="assets/B5.png"></div>
       </div>
     </div>
     

@@ -8,6 +8,7 @@
   margin-top: 10%;
   border: 3px solid #ac4402;
   border-radius: 10px;
+  z-index: 1;
 }
 .AAllowBox p{
   text-align: center;
