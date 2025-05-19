@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+  <link rel="icon" href="data:,">
   <meta charset = "utf-8">
   <link rel="stylesheet", href = "styles/style.css">
+  <link rel="stylesheet", href = "styles/datingSim.css">
   <title>BjörnHub</title>
   
 
@@ -19,8 +21,14 @@
   </header>
   
   <main>
-    
-
+    <div class="game"> 
+      <div class="dialogueBox">
+          <div class="speaker"><img src="assets/B4.png"></div>
+        <div class="text"></div>
+      </div>
+      <div class="options">
+      </div>
+    </div>
 
   </main>
   
@@ -29,5 +37,10 @@
       <h3> BjörnHub © 2025 </h3>   
     </div>
   </footer>
+  <script src="scripts/Sim.js?v=<%= Date.now() %>"">
+    const script = document.createElement('script');
+    script.src = `scripts/Sim.js?v=${Date.now()}`;
+    document.body.appendChild(script);
+  </script>
 </body>
 </html> 

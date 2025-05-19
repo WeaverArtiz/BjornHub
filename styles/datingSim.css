@@ -1,0 +1,50 @@
+.game{
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+}
+.game .dialogueBox{
+  --dBoxHeight: 340px;
+  width: 90%;
+  height: var(--dBoxHeight);
+  margin-top: 40px;
+  margin-left: 5%;
+  display: flex;
+  background-color: rgba(80,80,80,0.7);
+}
+.game .dialogueBox .speaker{
+  width: 20%;
+  min-width: 200px;
+  height: 80%;
+  margin: calc(var(--dBoxHeight)/10);
+  background-color: rgba(33,33,33,0.2);
+}
+.game .dialogueBox .speaker img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.game .dialogueBox .text{
+  width: 80%;
+  height: 80%;
+  margin: calc(var(--dBoxHeight)/10);
+  font-size: 30px;
+  color: #a9c6ff;
+}
+.game .options{
+  --opHeight: 360px;
+  height: var(--opHeight);
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(80,80,80,0.7);
+}
+.game .options .choice{
+  width: 80%;
+  height: 40px;
+  margin-left: 10%;
+  margin-top: 20px;
+  background-color: #ffffff;
+}

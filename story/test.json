@@ -1,0 +1,103 @@
+{
+  "scenes": {
+    "scene_1": {
+      "id": "scene_1",
+      "lines": [
+        {
+          "character": "Alex",
+          "text": "Hi there! Want to hang out?",
+          "choices": [
+            { "text": "Sure!", "next": "scene_2", "affection": 5 },
+            { "text": "Maybe later.", "next": "scene_3", "affection": -2 }
+          ]
+        }
+      ]
+    },
+    "scene_2": {
+      "id": "scene_2",
+      "lines": [
+        {
+          "character": "Alex",
+          "text": "Awesome! I was thinking of checking out the new café downtown. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"
+        },
+        {
+          "character": "Alex",
+          "text": "What do you feel like doing there?",
+          "choices": [
+            { "text": "Grab some coffee and chat", "next": "scene_4", "affection": 3 },
+            { "text": "Just chill and people-watch", "next": "scene_5", "affection": 1 }
+          ]
+        }
+      ]
+    },
+    "scene_3": {
+      "id": "scene_3",
+      "lines": [
+        {
+          "character": "Alex",
+          "text": "Oh... okay. Maybe some other time then."
+        },
+        {
+          "character": "Alex",
+          "text": "Let me know when you're free.",
+          "choices": [
+            { "text": "Actually, I changed my mind.", "next": "scene_2", "affection": 2 },
+            { "text": "Will do.", "next": "scene_6", "affection": 0 }
+          ]
+        }
+      ]
+    },
+    "scene_4": {
+      "id": "scene_4",
+      "lines": [
+        {
+          "character": "Alex",
+          "text": "This coffee is so good. I’m glad we came here."
+        },
+        {
+          "character": "Alex",
+          "text": "So... tell me something interesting about yourself."
+        },
+        {
+          "character": "You",
+          "text": "Well, I once backpacked across the country with nothing but a camera."
+        },
+        {
+          "character": "Alex",
+          "text": "Whoa, that’s amazing. You’re full of surprises!"
+        }
+      ]
+    },
+    "scene_5": {
+      "id": "scene_5",
+      "lines": [
+        {
+          "character": "Alex",
+          "text": "It’s kind of peaceful watching the world go by, isn’t it?"
+        },
+        {
+          "character": "You",
+          "text": "Yeah. It’s nice to slow down sometimes."
+        },
+        {
+          "character": "Alex",
+          "text": "Glad I’m doing it with you."
+        }
+      ]
+    },
+    "scene_6": {
+      "id": "scene_6",
+      "lines": [
+        {
+          "character": "Alex",
+          "text": "Alright. I'll wait to hear from you."
+        },
+        {
+          "character": "Alex",
+          "text": "Take care!"
+        }
+      ]
+    }
+  }
+}
+
