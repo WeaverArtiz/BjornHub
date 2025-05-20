@@ -1,8 +1,10 @@
 const dialogueBox = document.querySelector(".game .dialogueBox .text");
 const choicesBox = document.querySelector(".game .options");
+const nextBtn = document.querySelector(".game .dialogueBox .next");
 let scenes = {};
 let affection = 0;
 let currentScene = "";
+let i = 0;
 
 getData(`./story/test.json`);
 
@@ -17,63 +19,57 @@ function getData(file){
     .then(data => {
       scenes = data.scenes;
       currentScene = Object.keys(scenes)[0];
-      renderScene(currentScene);
+      console.log("2"); //debugging
+      renderScene();
     })  
     .catch(error => console.error('Failed to fetch data:', error)); 
 }
 
-function renderScene(id){
-  const scene=scenes[id];
+function renderScene(){
   dialogueBox.innerHTML = "";
   choicesBox.innerHTML = "";
-  let speaker = "";
+  i=0;
+  genText(i);
+  i+=1;
+}
 
-  scene.lines.forEach(line => {
-    const p = document.createElement("p");
-    if(speaker != `${line.character}`){
-      const btn = document.createElement("button");
-      btn.textContent = "next";
-      btn.className = "next";
-      btn.onclick = () => {
-        
-      }
-      speaker = `${line.character}`;
-      p.textContent = `${line.character}: ${line.text}`;
-    }
-    else{
-      p.textContent = `${line.text}`;
-    }
-    dialogueBox.appendChild(p);
+function genText(i){
+  const scene=scenes[currentScene];
+  const p = document.createElement("p");
+  dialogueBox.innerHTML = "";
+  nextBtn.style.visibility = "visible";
+  
+  p.textContent = `${scene.lines[i].character}: ${scene.lines[i].text}`;
+  dialogueBox.appendChild(p);
+  if(scene.lines[i].choices){
+    genOptions(i);  
+    nextBtn.style.visibility = "hidden";
+  }
+}
 
-    if (line.choices) {
-      line.choices.forEach(choice => {
-        const btn = document.createElement("button");
-        btn.textContent = choice.text;
-        btn.className = "choice";
-        btn.onclick = () => {
-          affection += choice.affection || 0;
-          id = choice.next;
-          renderScene(id);
-        };
-      choicesBox.appendChild(btn);
-      });
-    }
+function genOptions(i){
+  const scene=scenes[currentScene];
+
+  scene.lines[i].choices.forEach(choice => {
+    const btn = document.createElement("button");
+    btn.textContent = choice.text;
+    btn.className = "choice";
+
+    btn.onclick = () => {
+      affection += choice.affection || 0;
+      currentScene = choice.next;
+      renderScene();
+    };
+    choicesBox.appendChild(btn);
   });
 }
 
-/*function renderScene(id){
-
-  genText(id, lineid, ); genOptions(id, lineid); chspeaker;
-  chScene(id lineid);
-  
-
-function renderScene(id){
-  let i = 0;
-  if(genText(id,i)){
-    i+=1;
-
+nextBtn.onclick = () => {   
+  if(i<scenes[currentScene].lines.length){
+  genText(i);
+  i+=1;
+  }
+  if(i==scenes[currentScene].lines.length){
+    nextBtn.style.visibility = "hidden";
   }
 }
-function genText(id, lineid){
-
-}*/
