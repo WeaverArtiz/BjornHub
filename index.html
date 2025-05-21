@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset = "utf-8">
   <link rel="icon" href="data:,">
+  <meta charset = "utf-8">
   <link rel="stylesheet", href = "styles/style.css">
   <link rel="stylesheet", href = "styles/AAllowbox.css">
   <link rel="stylesheet", href = "styles/carousell.css">
   <link rel="stylesheet", href = "styles/gallery.css">
+  <script src="scripts/gallery.js?v=<%= Date.now() %>"></script>
   <title>BjörnHub</title>
   
 
@@ -73,31 +74,11 @@
       </div>
     </div>
     
-    <div class="row">
-      <div class="column">
-        <a><img src="assets/imgs/i1.jpg"></a>
-        <a><img src="assets/imgs/i2.jpg"></a>
-        <a><img src="assets/imgs/i3.png"></a>
-        <a><img src="assets/imgs/i4.jpg"></a>
-      </div>
-      <div class="column">
-        <a><img src="assets/imgs/i2.jpg"></a>
-        <a><img src="assets/imgs/i3.png"></a>
-        <a><img src="assets/imgs/i4.jpg"></a>
-        <a><img src="assets/imgs/i1.jpg"></a>
-      </div>
-      <div class="column">
-        <a><img src="assets/imgs/i2.jpg"></a>
-        <a><img src="assets/imgs/i2.jpg"></a>
-        <a><img src="assets/imgs/i3.png"></a>
-        <a><img src="assets/imgs/i1.jpg"></a>
-      </div>
-      <div class="column">
-        <a><img src="assets/imgs/i1.jpg"></a>
-        <a><img src="assets/imgs/i4.jpg"></a>
-        <a><img src="assets/imgs/i2.jpg"></a>
-        <a><img src="assets/imgs/i4.jpg"></a>
-      </div>
+    <div class="gallery">
+      <div class="column" id="c1"></div>
+      <div class="column" id="c2"></div>
+      <div class="column" id="c3"></div>
+      <div class="column" id="c4"></div>
     </div>
   </main>
 
