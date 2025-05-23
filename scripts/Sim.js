@@ -18,8 +18,12 @@ function getData(file){
     })
     .then(data => {
       scenes = data.scenes;
-      currentScene = Object.keys(scenes)[0];
-      console.log("2"); //debugging
+      loadScene();
+      if(!scenes[currentScene] || !(scenes[currentScene].lines && scenes[currentScene].lines[i])){
+        currentScene = Object.keys(scenes)[0];
+        i=0;
+      }
+      console.log("3"); //debugging
       renderScene();
     })  
     .catch(error => console.error('Failed to fetch data:', error)); 
@@ -73,3 +77,24 @@ nextBtn.onclick = () => {
     nextBtn.style.visibility = "hidden";
   }
 }
+
+
+function saveScene() {
+  const gameState = {
+    it: i,
+    scene: currentScene
+  }
+  localStorage.removeItem("gameState");
+  localStorage.setItem("gameState", JSON.stringify(gameState));
+}
+
+function loadScene() {
+  const data = localStorage.getItem("gameState");
+  if(data){
+    const gameState = JSON.parse(data);
+    i = gameState.it;
+    currentScene = gameState.scene;
+  }
+}
+
+window.addEventListener("beforeunload", saveScene);
