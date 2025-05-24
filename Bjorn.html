@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bjorn</title>
+  <meta charset = "utf-8">
+  <link rel="stylesheet", href = "styles/style.css">
+  <link rel="stylesheet", href = "styles/bjorn.css">
+
+</head>
+<body> 
+  <header>
+    <div class="master">
+      <div class="logo"><img src="assets/BhubTS.png" alt="Logo"></div>
+      <div class="search"><input type="text" name="search"></div>
+      <div class="login">
+        <button type="button">Sign In</button>
+        <button type="button">Sign Up</button>
+      </div> 
+    </div>
+
+    <nav>
+      <div><a href="index.html">Home</a></div>
+      <div><a href="bjornStars.html">Björnstars</a></div>
+      <div><a href="datingSim.html">Dating Sim</a></div>
+      <div><a>Community</a></div>
+    </nav>
+  </header>
+  
+  <main>
+    <img id="selected-bjorn" src="" alt="bjorn">
+
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const img = params.get("img");
+    const path="assets/imgs/"
+
+    if(img){  
+      document.getElementById("selected-bjorn").src = `${path}${img}`;
+    } 
+    else{
+      document.getElementById("selected-bjorn").alt = "No image selected";
+    }
+  </script>
+</body>
+</html>
+

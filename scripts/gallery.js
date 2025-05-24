@@ -1,4 +1,4 @@
-const path="assets/imgs"
+const path="assets/imgs/"
 function placeImgs(i) {
   fetch('assets/imglist.json')
     .then(res => res.json())
@@ -12,8 +12,13 @@ function placeImgs(i) {
 
       images.forEach((image, index) => {
         const img = document.createElement('img');
-        img.src = path + "/" + image;
-        columns[(index+i) % 4].appendChild(img);
+        img.src = path + image;
+
+        const link = document.createElement('a');
+        link.href = `Bjorn.html?img=${encodeURIComponent(image)}`;
+
+        link.appendChild(img)
+        columns[(index+i) % 4].appendChild(link);
       });
     });
 }

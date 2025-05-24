@@ -23,7 +23,7 @@ function getData(file){
         currentScene = Object.keys(scenes)[0];
         i=0;
       }
-      console.log("3"); //debugging
+      console.log(i); //debugging
       renderScene();
     })  
     .catch(error => console.error('Failed to fetch data:', error)); 
@@ -32,12 +32,10 @@ function getData(file){
 function renderScene(){
   dialogueBox.innerHTML = "";
   choicesBox.innerHTML = "";
-  i=0;
   genText(i);
-  i+=1;
 }
 
-function genText(i){
+function genText(){
   const scene=scenes[currentScene];
   const p = document.createElement("p");
   dialogueBox.innerHTML = "";
@@ -51,9 +49,9 @@ function genText(i){
   }
 }
 
-function genOptions(i){
+function genOptions(){
   const scene=scenes[currentScene];
-
+  
   scene.lines[i].choices.forEach(choice => {
     const btn = document.createElement("button");
     btn.textContent = choice.text;
@@ -62,6 +60,7 @@ function genOptions(i){
     btn.onclick = () => {
       affection += choice.affection || 0;
       currentScene = choice.next;
+      i=0;
       renderScene();
     };
     choicesBox.appendChild(btn);
@@ -70,8 +69,8 @@ function genOptions(i){
 
 nextBtn.onclick = () => {   
   if(i<scenes[currentScene].lines.length){
-  genText(i);
   i+=1;
+  genText(i);
   }
   if(i==scenes[currentScene].lines.length){
     nextBtn.style.visibility = "hidden";
