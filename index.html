@@ -7,7 +7,6 @@
   <link rel="stylesheet", href = "styles/AAllowbox.css">
   <link rel="stylesheet", href = "styles/carousell.css">
   <link rel="stylesheet", href = "styles/gallery.css">
-  <script src="scripts/gallery.js?v=<%= Date.now() %>"></script>
   <title>BjörnHub</title>
   
 
@@ -43,12 +42,8 @@
     
  <header>
       <div class="master">
-        <div class="logo">
-          <img src="assets/BhubTS.png" alt="Logo">
-        </div>
-        <div class="search">
-          <input type="text" name="search">
-        </div>
+        <div class="logo"><img src="assets/BhubTS.png" alt="Logo"></div>
+        <div class="search"><input id="search_tag" type="text" name="search" placeholder="Search by Tag"></div>
         <div class="login">
           <button type="button">Sign In</button>
           <button type="button">Sign Up</button>
@@ -88,4 +83,5 @@
     </div>
   </footer>
 </body>
+<script src="scripts/gallery.js?v=<%= Date.now() %>"></script>
 </html> 

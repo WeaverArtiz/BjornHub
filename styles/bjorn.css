@@ -1,0 +1,7 @@
+main img{
+  height: 80vh;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}

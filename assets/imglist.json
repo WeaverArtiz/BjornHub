@@ -1,1 +1,6 @@
-["i1.jpg","i2.jpg","i3.png","i4.jpg"]
+[
+  { "image": "i1.jpg", "tags": ["helmet"] },
+  { "image": "i2.jpg", "tags": ["sea", "axe", "ship", "sword", "helmet"] },
+  { "image": "i3.png", "tags": ["shield", "portrait"] },
+  { "image": "i4.jpg", "tags": ["portrait"] }
+]
