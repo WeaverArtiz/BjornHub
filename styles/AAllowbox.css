@@ -3,7 +3,7 @@
   width: 60%;
   height: 50%;
   background-color: rgba(20, 20, 20, 0.95);
-  color: #a9c6ff;
+  color: #ffffff;
   margin-left: 20%;
   margin-top: 10%;
   border: 3px solid #ac4402;
@@ -27,7 +27,7 @@
   border: 2px solid #ac4402;
   border-radius: 5px;
   background-color: #404040;
-  color: #a9c6ff;
+  color: #ffffff;
   transition: ease-in 0.2s;
 }
 .AAllowBox button:hover{

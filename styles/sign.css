@@ -1,0 +1,90 @@
+#signInDialog {
+    position: relative;
+    padding: 15px 40px 40px 40px;
+    border: 2px solid #ac4402;
+    border-radius: 10px;
+    background-color: rgba(20, 20, 20, 0.95);
+}
+
+#signUpDialog {
+    position: relative;
+    padding: 15px 40px 40px 40px;
+    border: 2px solid #ac4402;
+    border-radius: 10px;
+    background-color: rgba(20, 20, 20, 0.95);
+}
+
+
+#signInDialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#closeSignIn {
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border-color: #ac4402;
+
+}
+
+#closeSignUp {
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border-color: #ac4402;
+
+}
+
+#signText {
+    color: #ffffff;
+    text-align: center;
+}
+
+.dialog-buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    bottom: -10px;
+    background: transparent;
+    border-color: #ac4402;
+}
+
+#loginSignIn {
+    border: 2px solid ;
+    color: #ffffff;
+    background: transparent;
+    border-color: #ac4402;
+}
+
+#loginSignUp {
+    border: 2px solid ;
+    color: #ffffff;
+    background: transparent;
+    border-color: #ac4402;
+}
+
+#password {
+    border: 2px solid ;
+    color: #ffffff;
+    background: transparent;
+    border-color: #ac4402;
+}
+
+#expirationDate {
+    border: 2px solid ;
+    color: #ffffff;
+    background: transparent;
+    border-color: #ac4402;
+}
+
+#threeNumbers {
+    border: 2px solid ;
+    color: #ffffff;
+    background: transparent;
+    border-color: #ac4402;
+}

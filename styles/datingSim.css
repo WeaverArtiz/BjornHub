@@ -31,7 +31,7 @@
   height: 80%;
   margin: calc(var(--dBoxHeight)/10);
   font-size: 30px;
-  color: #a9c6ff;
+  color: #ffffff;
 }
 .game .dialogueBox .next{
   position: absolute;
