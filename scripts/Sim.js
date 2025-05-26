@@ -7,6 +7,7 @@ let currentScene = "";
 let i = 0;
 let npcList = [];
 let prevNpc = "";
+let prevBG = "";
 
 fetch('story/npcs.json')
   .then(res => res.json())
@@ -55,6 +56,11 @@ function genText(){
   if(scene.lines[i].character != prevNpc){
     prevNpc=scene.lines[i].character;
     changeSpeakerSprite(prevNpc);
+  }
+  
+  if(scene.lines[i].background && scene.lines[i].background != prevBG){
+    prevBG=scene.lines[i].background;
+    changeBackground(prevBG);
   }
 
   p.textContent = `${scene.lines[i].character}: ${scene.lines[i].text}`;
@@ -109,6 +115,13 @@ function changeSpeakerSprite(Cur_npc){
 
   speaker.innerHTML='';
   speaker.appendChild(img);
+}
+
+function changeBackground(Bg){
+  const gameDiv = document.querySelector('.game');
+  gameDiv.style.backgroundImage = `url('${Bg}')`;
+  gameDiv.style.backgroundSize = 'cover';
+  gameDiv.style.backgroundPosition = 'center';
 }
 
 nextBtn.onclick = () => { 

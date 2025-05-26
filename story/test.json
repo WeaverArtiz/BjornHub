@@ -5,6 +5,7 @@
       "lines": [
         {
           "character": "Alex",
+          "background": "assets/scenes/ulica.png",
           "text": "Hi there! Want to hang out?",
           "choices": [
             { "text": "Sure!", "next": "scene_2", "affection": 5 },
@@ -18,6 +19,7 @@
       "lines": [
         {
           "character": "Alex",
+          "background": "assets/scenes/ulica.png",
           "text": "Awesome! I was thinking of checking out the new café downtown. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"
         },
         {

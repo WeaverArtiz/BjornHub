@@ -88,3 +88,16 @@
     background: transparent;
     border-color: #ac4402;
 }
+header .login button{
+  background-color: #404040;
+  border-radius: 8px;
+  border: 2px solid #ac4402;
+  color: #ffffff;
+  padding: 5px;
+}
+header .login button:hover{
+  background-color: #808080;
+  transition: ease-in-out 0.4s;
+  border: 2px solid #bc5512;
+  cursor: pointer;
+}
