@@ -1,0 +1,4 @@
+[
+  { "npc": "Alex", "sprite": "assets/npcs/B1.png" },
+  { "npc": "You", "sprite": "assets/npcs/B2.png" }
+]
