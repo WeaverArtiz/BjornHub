@@ -3,8 +3,9 @@
 <head>
   <title>Bjorn</title>
   <meta charset = "utf-8">
-  <link rel="stylesheet", href = "styles/style.css">
+  <link rel="stylesheet", href = "styles/style.css", id="themeStylesheet">
   <link rel="stylesheet", href = "styles/bjorn.css">
+  <link rel="stylesheet", href = "styles/sign.css">
 
 </head>
 <body> 
@@ -13,8 +14,9 @@
       <div class="logo"><img src="assets/BhubTS.png" alt="Logo"></div>
       <div class="search"><input type="text" name="search"></div>
       <div class="login">
-        <button type="button">Sign In</button>
-        <button type="button">Sign Up</button>
+        <button type="button" id="signInButton">Sign In</button>
+        <button type="button" id="signUpButton">Sign Up</button>
+        <button onclick="toggleTheme()" id="darkmode"></button>
       </div> 
     </div>
 
@@ -29,7 +31,29 @@
   <main>
     <img id="selected-bjorn" src="" alt="bjorn">
 
-  </main>
+  </main> 
+
+  <dialog id="signInDialog">
+    <form method="dialog">
+      <button type="button" id="closeSignIn" class="close-buttons">x</button>
+      <h1 id="signText">Sign in</h1><br><br>
+      <input type="text" id="loginSignIn" maxlength="19" placeholder="Credit card number"><br><br>
+      <input type="text" id="password" maxlength="20" placeholder="Password"><br>
+      <button type="submit" class="dialog-buttons">Sign in</button>
+    </form>
+  </dialog>
+  <dialog id="signUpDialog">
+    <form method="dialog">
+      <button type="button" id="closeSignUp" class="close-buttons">x</button>
+      <h1 id="signText">Sign Up</h1><br><br>
+      <input type="text" id="loginSignUp" maxlength="19" placeholder="Credit card number"><br><br>
+      <input type="text" id="expirationDate" maxlength="5" placeholder="Expiration date"><br><br>
+      <input type="text" id="threeNumbers" maxlength="3" placeholder="Funny numbers on back"><br><br>
+      <input type="text" id="password" maxlength="20" placeholder="Password"><br>
+      <button type="submit" class="dialog-buttons">Sign up</button>  
+    </form>
+  </dialog>
+</body>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -43,6 +67,7 @@
       document.getElementById("selected-bjorn").alt = "No image selected";
     }
   </script>
-</body>
+  <script src="scripts/sign.js"></script>
+  <script src="scripts/brightness.js"></script>
 </html>
 

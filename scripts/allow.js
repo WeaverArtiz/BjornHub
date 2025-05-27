@@ -1,0 +1,13 @@
+const startBtn = document.getElementById('audioBtn');
+  
+const audio = document.getElementById('BjornSong');
+const box = document.getElementById('AAllowBox');
+const leaveBtn = document.getElementById('leaveBtn');
+startBtn.addEventListener('click', () => {
+  audio.play()
+  startBtn.style.display = 'none';
+  box.style.display = 'none';
+});
+leaveBtn.addEventListener('click', () => {
+  window.location.href = "https://www.google.com"
+}); 

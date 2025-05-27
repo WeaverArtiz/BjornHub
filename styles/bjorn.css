@@ -3,5 +3,6 @@ main img{
   width: auto;
   position: absolute;
   left: 50%;
+  margin-top: 20px;
   transform: translate(-50%);
 }

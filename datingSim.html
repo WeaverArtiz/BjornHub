@@ -23,21 +23,6 @@
     <button id="leaveBtn" class="audioBtn">Leave Page</button>
     </div>
   </div>
-  <script>
-  const startBtn = document.getElementById('audioBtn');
-  
-  const audio = document.getElementById('BjornSong');
-  const box = document.getElementById('AAllowBox');
-  const leaveBtn = document.getElementById('leaveBtn');
-  startBtn.addEventListener('click', () => {
-    audio.play()
-    startBtn.style.display = 'none';
-    box.style.display = 'none';
-  });
-  leaveBtn.addEventListener('click', () => {
-    window.location.href = "https://www.google.com"
-  }); 
-  </script>
 
   <header>
       <nav>
@@ -71,5 +56,6 @@
     script.src = `scripts/Sim.js?v=${Date.now()}`;
     document.body.appendChild(script);
   </script>
+  <script src="scripts/allow.js"></script>
 </body>
 </html> 

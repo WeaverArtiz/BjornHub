@@ -13,68 +13,17 @@
 
 </head>
 
-<body>  
-  <audio loop id = "BjornSong">
-      <source src="assets/Start.mp3" type="audio/mpeg"> 
-  </audio>
-    
+<body>   
+  <audio loop id = "BjornSong"><source src="assets/Start.mp3" type="audio/mpeg"> </audio>  
   <div class="AAllowBox" id="AAllowBox">
       <p>This page requires audio in order to provide intended experience.</p>
     <div class ="bbox">
     <button id="audioBtn" class="audioBtn">Go</button>
     <button id="leaveBtn" class="audioBtn">Leave Page</button>
     </div>
-  </div>
-  <script>
-  const startBtn = document.getElementById('audioBtn');
-  
-  const audio = document.getElementById('BjornSong');
-  const box = document.getElementById('AAllowBox');
-  const leaveBtn = document.getElementById('leaveBtn');
-  startBtn.addEventListener('click', () => {
-    audio.play()
-    startBtn.style.display = 'none';
-    box.style.display = 'none';
-  });
-  leaveBtn.addEventListener('click', () => {
-    window.location.href = "https://www.google.com"
-  }); 
+  </div> 
 
-  function toggleTheme() {
-    const themeLink = document.getElementById('themeStylesheet');
-    const currentTheme = themeLink.getAttribute('href');
-
-    if (currentTheme === 'styles/light.css') {
-      themeLink.setAttribute('href', 'styles/style.css');
-    } 
-    else{
-      themeLink.setAttribute('href', 'styles/light.css');
-    }
-  }
-</script>
-    
-  <dialog id="signInDialog">
-    <form method="dialog">
-      <button type="button" id="closeSignIn" class="close-buttons">x</button>
-      <h1 id="signText">Sign in</h1><br><br>
-      <input type="text" id="loginSignIn" maxlength="19" placeholder="Credit card number"><br><br>
-      <input type="text" id="password" maxlength="20" placeholder="Password"><br>
-      <button type="submit" class="dialog-buttons">Sign in</button>
-    </form>
-  </dialog>
-  <dialog id="signUpDialog">
-    <form method="dialog">
-      <button type="button" id="closeSignUp" class="close-buttons">x</button>
-      <h1 id="signText">Sign Up</h1><br><br>
-      <input type="text" id="loginSignUp" maxlength="19" placeholder="Credit card number"><br><br>
-      <input type="text" id="expirationDate" maxlength="5" placeholder="Expiration date"><br><br>
-      <input type="text" id="threeNumbers" maxlength="3" placeholder="Funny numbers on back"><br><br>
-      <input type="text" id="password" maxlength="20" placeholder="Password"><br>
-      <button type="submit" class="dialog-buttons">Sign up</button>  
-    </form>
-  </dialog>
-
- <header>
+ <header>  
       <div class="master">
         <div class="logo"><img src="assets/BhubTS.png" alt="Logo"></div>
         <div class="search"><input id="search_tag" type="text" name="search" placeholder="Search by Tag"></div>
@@ -116,89 +65,33 @@
     <div>
       <h3> BjörnHub © 2025 </h3>   
     </div>
-  </footer>
+  </footer>  
+  
+  <dialog id="signInDialog">
+    <form method="dialog">
+      <button type="button" id="closeSignIn" class="close-buttons">x</button>
+      <h1 id="signText">Sign in</h1><br><br>
+      <input type="text" id="loginSignIn" maxlength="19" placeholder="Credit card number"><br><br>
+      <input type="text" id="password" maxlength="20" placeholder="Password"><br>
+      <button type="submit" class="dialog-buttons">Sign in</button>
+    </form>
+  </dialog>
+  <dialog id="signUpDialog">
+    <form method="dialog">
+      <button type="button" id="closeSignUp" class="close-buttons">x</button>
+      <h1 id="signText">Sign Up</h1><br><br>
+      <input type="text" id="loginSignUp" maxlength="19" placeholder="Credit card number"><br><br>
+      <input type="text" id="expirationDate" maxlength="5" placeholder="Expiration date"><br><br>
+      <input type="text" id="threeNumbers" maxlength="3" placeholder="Funny numbers on back"><br><br>
+      <input type="text" id="password" maxlength="20" placeholder="Password"><br>
+      <button type="submit" class="dialog-buttons">Sign up</button>  
+    </form>
+  </dialog>
+
+
 </body>
 <script src="scripts/gallery.js?v=<%= Date.now() %>"></script>
-<script>
-  const loginSignIn = document.getElementById('loginSignIn')
-  loginSignIn.addEventListener("input", (e) => {
-    let value = e.target.value;
-    value = value.replace(/\D/g, '');
-    value = value.substring(0,16);
-    const parts = [];
-    for(let i = 0; i < value.length; i += 4) {
-      parts.push(value.substring(i, i + 4));
-    }
-    e.target.value =parts.join(' ');
-  });
-
-  const loginSignUp = document.getElementById('loginSignUp')
-    loginSignUp.addEventListener("input", (e) => {
-      let value = e.target.value;
-      value = value.replace(/\D/g, '');
-      value = value.substring(0,16);
-      const parts = [];
-      for(let i = 0; i < value.length; i += 4) {
-        parts.push(value.substring(i, i + 4));
-      }
-      e.target.value =parts.join(' ');
-    });
-
-    const expirationDate = document.getElementById('expirationDate')
-    const threeNumbers = document.getElementById('threeNumbers')
-
-    threeNumbers.addEventListener("input", (f) => {
-      let valuef = f.target.value;
-      valuef = valuef.replace(/\D/g, '');
-      valuef = valuef.substring(0,3);
-      f.target.value =valuef ;
-    });
-    
-    expirationDate.addEventListener("input", (g) => {
-    let valueg = g.target.value.replace(/\D/g, ''); // tylko cyfry
-
-    if (valueg.length >= 1) {
-      if (!['0', '1'].includes(valueg[0])) {
-        valueg = ''; 
-      }
-    }
-
-    if (valueg.length >= 2) {
-      const monthg = parseInt(valueg.slice(0, 2), 10);
-      if (monthg < 1 || monthg > 12) {
-        valueg = valueg.slice(0, 1); 
-      }
-    }
-
-    if (valueg.length > 4) {
-      valueg = valueg.slice(0, 4);
-    }
-
-    const partsg = [];
-    for (let i = 0; i < valueg.length; i += 2) {
-      partsg.push(valueg.substring(i, i + 2));
-    }
-
-    g.target.value = partsg.join('/');
-  });
-
-    const signInButton = document.getElementById('signInButton');
-    const signUpButton = document.getElementById('signUpButton');
-
-    signInButton.addEventListener('click', function(){
-      signInDialog.showModal();
-    });
-
-    signUpButton.addEventListener('click', function(){
-      signUpDialog.showModal();
-    });
-
-    closeSignIn.addEventListener('click', function(){
-      signInDialog.close();
-    });
-
-    closeSignUp.addEventListener('click', function(){
-      signUpDialog.close();
-    });
-  </script> 
+<script src="scripts/sign.js?v=<%= Date.now() %>"></script>
+<script src="scripts/brightness.js"></script>
+<script src="scripts/allow.js"></script>
 </html> 
