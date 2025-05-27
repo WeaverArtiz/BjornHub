@@ -1,4 +1,5 @@
 [
-  { "npc": "Alex", "sprite": "assets/npcs/B1.png" },
-  { "npc": "You", "sprite": "assets/npcs/B2.png" }
+  { "npc": "Narrator", "sprite": "assets/npcs/B1.png" },
+  { "npc": "Bjørn", "sprite": "assets/npcs/B2.png" },
+  { "npc": "Ty", "sprite": "assets/npcs/B3.png" }
 ]

@@ -4,12 +4,13 @@
       "id": "scene_1",
       "lines": [
         {
-          "character": "Alex",
-          "background": "assets/scenes/ulica.png",
-          "text": "Hi there! Want to hang out?",
+          "character": "Bjørn",
+          "background": "assets/scenes/strre.png",
+          "text": "Hej, widzę cię tu często na tej ulicy. Szukasz przygody?",
           "choices": [
-            { "text": "Sure!", "next": "scene_2", "affection": 5 },
-            { "text": "Maybe later.", "next": "scene_3", "affection": -2 }
+            { "text": "Tak, zawsze jestem gotów na coś nowego.", "next": "scene_2", "affection": 2 },
+            { "text": "Raczej obserwuję, nie lubię się spieszyć.", "next": "scene_2", "affection": 0 },
+            { "text": "Może, jeśli znajdę towarzysza.", "next": "scene_2", "affection": 1 }
           ]
         }
       ]
@@ -18,16 +19,13 @@
       "id": "scene_2",
       "lines": [
         {
-          "character": "Alex",
-          "background": "assets/scenes/ulica.png",
-          "text": "Awesome! I was thinking of checking out the new café downtown. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"
-        },
-        {
-          "character": "Alex",
-          "text": "What do you feel like doing there?",
+          "character": "Bjørn",
+          "background": "assets/scenes/strre.png",
+          "text": "Ha! Prawdziwy wojownik zawsze ma plan. A co powiesz na walkę siekierą?",
           "choices": [
-            { "text": "Grab some coffee and chat", "next": "scene_4", "affection": 3 },
-            { "text": "Just chill and people-watch", "next": "scene_5", "affection": 1 }
+            { "text": "Uwielbiam siekiery, pokaż mi swoje umiejętności!", "next": "scene_3", "affection": 3 },
+            { "text": "Wolę siłę i spokój, nie walczę bez potrzeby.", "next": "scene_3", "affection": 0 },
+            { "text": "Może nauczysz mnie czegoś nowego?", "next": "scene_3", "affection": 2 }
           ]
         }
       ]
@@ -36,15 +34,13 @@
       "id": "scene_3",
       "lines": [
         {
-          "character": "Alex",
-          "text": "Oh... okay. Maybe some other time then."
-        },
-        {
-          "character": "Alex",
-          "text": "Let me know when you're free.",
+          "character": "Bjørn",
+          "background": "assets/scenes/strre.png",
+          "text": "Po walce czas na odpoczynek. Lubię saunę, to mój ulubiony sposób na relaks.",
           "choices": [
-            { "text": "Actually, I changed my mind.", "next": "scene_2", "affection": 2 },
-            { "text": "Will do.", "next": "scene_6", "affection": 0 }
+            { "text": "Sauna brzmi świetnie, chodźmy tam.", "next": "scene_4", "affection": 3 },
+            { "text": "Wolę coś mniej gorącego, ale jestem ciekaw.", "next": "scene_4", "affection": 1 },
+            { "text": "Nie jestem fanem sauny, może coś innego?", "next": "scene_4", "affection": 0 }
           ]
         }
       ]
@@ -53,53 +49,503 @@
       "id": "scene_4",
       "lines": [
         {
-          "character": "Alex",
-          "text": "This coffee is so good. I’m glad we came here."
-        },
-        {
-          "character": "Alex",
-          "text": "So... tell me something interesting about yourself."
-        },
-        {
-          "character": "You",
-          "text": "Well, I once backpacked across the country with nothing but a camera."
-        },
-        {
-          "character": "Alex",
-          "text": "Whoa, that’s amazing. You’re full of surprises!"
+          "character": "Bjørn",
+          "background": "assets/scenes/strre.png",
+          "text": "Zobaczymy, gdzie los nas zaprowadzi. Czas ruszać dalej... Dokąd chcesz iść?",
+          "choices": [
+            { "text": "Idziemy do IKEA!", "next": "scene_IKEA_1", "affection": 0 },
+            { "text": "Pora odwiedzić sklep z siekierami.", "next": "scene_sklep_z_siekierami_1", "affection": 0 },
+            { "text": "Sauna brzmi dobrze na teraz.", "next": "scene_sauna_1", "affection": 0 }
+          ]
         }
       ]
     },
-    "scene_5": {
-      "id": "scene_5",
+    "scene_IKEA_1": {
+      "id": "scene_IKEA_1",
       "lines": [
         {
-          "character": "Alex",
-          "text": "It’s kind of peaceful watching the world go by, isn’t it?"
-        },
-        {
-          "character": "You",
-          "text": "Yeah. It’s nice to slow down sometimes."
-        },
-        {
-          "character": "Alex",
-          "text": "Glad I’m doing it with you."
+          "character": "Bjørn",
+          "background": "assets/scenes/ikea.png",
+          "text": "Wchodzimy do IKEA — miejsce pełne inspiracji i dziwnych przedmiotów. Co przykuło twoją uwagę?",
+          "choices": [
+            { "text": "Miękkie kanapy wyglądają kusząco.", "next": "scene_IKEA_2", "affection": 2 },
+            { "text": "Te stoły i krzesła są jak z moich snów.", "next": "scene_IKEA_2", "affection": 1 },
+            { "text": "Wszystko tu takie praktyczne i proste.", "next": "scene_IKEA_2", "affection": 0 }
+          ]
         }
       ]
     },
-    "scene_6": {
-      "id": "scene_6",
+    "scene_IKEA_2": {
+      "id": "scene_IKEA_2",
       "lines": [
         {
-          "character": "Alex",
-          "text": "Alright. I'll wait to hear from you."
-        },
-        {
-          "character": "Alex",
-          "text": "Take care!"
+          "character": "Bjørn",
+          "background": "assets/scenes/ikea.png",
+          "text": "Zauważyłem, że lubisz praktyczne rzeczy. Może coś wspólnie zmontujemy?",
+          "choices": [
+            { "text": "Jasne, pokaż mi narzędzia!", "next": "scene_IKEA_3", "affection": 3 },
+            { "text": "Wolałbym odpocząć, ale chętnie pomogę.", "next": "scene_IKEA_3", "affection": 1 },
+            { "text": "Nie jestem zbyt złotą rączką, ale spróbuję.", "next": "scene_IKEA_3", "affection": 0 }
+          ]
         }
+      ]
+    },
+    "scene_IKEA_3": {
+      "id": "scene_IKEA_3",
+      "lines": [
+        {
+          "character": "Bjørn",
+          "background": "assets/scenes/ikea.png",
+          "text": "Budzisz we mnie ducha wojownika. Gotowy na wyzwanie?",
+          "choices": [
+            { "text": "Zawsze gotów!", "next": "scene_IKEA_4", "affection": 3 },
+            { "text": "Może nie dziś, ale z czasem.", "next": "scene_IKEA_4", "affection": 1 },
+            { "text": "Duch wojownika czasem potrzebuje odpoczynku.", "next": "scene_IKEA_4", "affection": 0 }
+          ]
+        }
+      ]
+    },
+    "scene_IKEA_4": {
+    "id": "scene_IKEA_4",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/ikea.png",
+        "text": "Czas na kolejny krok w naszej przygodzie. Gdzie dalej, przyjacielu?",
+        "choices": [
+          { "text": "Płyniemy łodzią wikingów!", "next": "scene_lodz_wikingow_1", "affection": 0 },
+          { "text": "Sprawdźmy Klub śpiewu Wikingów.", "next": "scene_klub_spiewu_wikingow_1", "affection": 0 }
+        ]
+      }
+    ]
+  },
+  "scene_sklep_z_siekierami_1": {
+    "id": "scene_sklep_z_siekierami_1",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/axeshop.png",
+        "text": "Witaj w sklepie, przyjacielu. Co dzisiaj wybierasz? Siekierę na bitwę, czy na rzeźbę?",
+        "choices": [
+          { "text": "Bitwa! Potrzebuję czegoś ciężkiego.", "next": "scene_sklep_z_siekierami_2", "affection": 2 },
+          { "text": "Rzeźba? Chcę coś pięknego do domu.", "next": "scene_sklep_z_siekierami_2", "affection": 1 },
+          { "text": "Nie wiem, może coś lekkiego.", "next": "scene_sklep_z_siekierami_2", "affection": 0 }
+        ]
+      }
+    ]
+  },
+  "scene_sklep_z_siekierami_2": {
+    "id": "scene_sklep_z_siekierami_2",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/axeshop.png",
+        "text": "Mówisz, że nie wiesz? Wiking musi być zdecydowany!",
+        "choices": [
+          { "text": "Masz rację, biorę tę ciężką.", "next": "scene_sklep_z_siekierami_3", "affection": 3 },
+          { "text": "No dobrze, coś lekkiego dla zmiany.", "next": "scene_sklep_z_siekierami_3", "affection": 1 },
+          { "text": "Chyba się rozmyśliłem, wyjdę.", "next": "scene_sklep_z_siekierami_3", "affection": -1 }
+        ]
+      }
+    ]
+  },
+  "scene_sklep_z_siekierami_3": {
+    "id": "scene_sklep_z_siekierami_3",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/axeshop.png",
+        "text": "W porządku, widzę, że się starasz. Chcesz może spróbować treningu z siekierą na zewnątrz?",
+        "choices": [
+          { "text": "Tak, pokaż mi jak to robić.", "next": "scene_sklep_z_siekierami_4", "affection": 4 },
+          { "text": "Nie dzisiaj, wolę odpocząć.", "next": "scene_sklep_z_siekierami_4", "affection": 0 },
+          { "text": "Może później.", "next": "scene_sklep_z_siekierami_4", "affection": 1 }
+        ]
+      }
+    ]
+  },
+  "scene_sklep_z_siekierami_4": {
+    "id": "scene_sklep_z_siekierami_4",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/axeshop.png",
+        "text": "Dobra robota dzisiaj. Gdzie teraz zmierzamy?",
+        "choices": [
+          { "text": "Odwiedźmy piwnicę Bjørna.", "next": "scene_piwnica_bjorn_1", "affection": 0 },
+          { "text": "Może jego sypialnia będzie spokojniejsza?", "next": "scene_sypialnia_bjorn_1", "affection": 0 }
+        ]
+      }
+    ]
+  },
+  "scene_sauna_1": {
+    "id": "scene_sauna_1",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/sauna.png",
+        "text": "Sauna to miejsce, gdzie dusza i ciało się oczyszczają. Chcesz dołączyć?",
+        "choices": [
+          { "text": "Tak, kocham saunę.", "next": "scene_sauna_2", "affection": 3 },
+          { "text": "Nie jestem pewien, może później.", "next": "scene_sauna_2", "affection": 0 },
+          { "text": "Może to nie dla mnie.", "next": "scene_sauna_2", "affection": -1 }
+        ]
+      }
+    ]
+  },
+  "scene_sauna_2": {
+    "id": "scene_sauna_2",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/sauna.png",
+        "text": "Ciepło i para otulają nas, a historie starożytnych wojowników brzmią w tle.",
+        "choices": [
+          { "text": "Opowiedz mi jedną z tych historii.", "next": "scene_sauna_3", "affection": 2 },
+          { "text": "Lepiej się wyciszę i odpocznę.", "next": "scene_sauna_3", "affection": 0 },
+          { "text": "To trochę nudne.", "next": "scene_sauna_3", "affection": -2 }
+        ]
+      }
+    ]
+  },
+  "scene_sauna_3": {
+    "id": "scene_sauna_3",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/sauna.png",
+        "text": "Dobrze, że jesteś tutaj. Możemy razem przetrwać każdą burzę.",
+        "choices": [
+          { "text": "Jestem z tobą, Bjørn.", "next": "scene_sauna_4", "affection": 4 },
+          { "text": "Jeszcze się zastanowię.", "next": "scene_sauna_4", "affection": 1 },
+          { "text": "Nie wiem, czy dam radę.", "next": "scene_sauna_4", "affection": -1 }
+        ]
+      }
+    ]
+  },
+  "scene_sauna_4": {
+    "id": "scene_sauna_4",
+    "lines": [
+      {
+        "character": "Bjørn",
+        "background": "assets/scenes/sauna.png",
+        "text": "Czas wracać do świata... ale wybór należy do ciebie.",
+        "choices": [
+          { "text": "Krąg z krukami Odyna brzmi kusząco.", "next": "scene_krag_z_krukami_1", "affection": 0 },
+          { "text": "Chcę się jeszcze zrelaksować w źródłach.", "next": "scene_zrodla_termalne_1", "affection": 0 }
+        ]
+      }
+    ]
+  },
+"scene_lodz_wikingow_1": {
+  "id": "scene_lodz_wikingow_1",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/vikingboat.png",
+      "text": "Witaj na pokładzie! Łódź wikingów gotowa do wyprawy. Wiatr nam sprzyja!",
+      "choices": [
+        { "text": "Wiosłuję razem z tobą!", "next": "scene_lodz_wikingow_2", "affection": 3 },
+        { "text": "Podziwiam fale i czekam na przygodę.", "next": "scene_lodz_wikingow_2", "affection": 1 },
+        { "text": "Mam nadzieję, że nie będzie burzy...", "next": "scene_lodz_wikingow_2", "affection": 0 }
       ]
     }
-  }
+  ]
+},
+"scene_lodz_wikingow_2": {
+  "id": "scene_lodz_wikingow_2",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/vikingboat.png",
+      "text": "Wiking nigdy nie lęka się burzy. Widzę w tobie ducha morza!",
+      "choices": [
+        { "text": "Prowadź mnie przez fale!", "next": "scene_lodz_wikingow_3", "affection": 3 },
+        { "text": "Może chwilę odpocznę i popatrzę na horyzont.", "next": "scene_lodz_wikingow_3", "affection": 1 },
+        { "text": "Zaczynam się trochę niepokoić...", "next": "scene_lodz_wikingow_3", "affection": -1 }
+      ]
+    }
+  ]
+},
+"scene_lodz_wikingow_3": {
+  "id": "scene_lodz_wikingow_3",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/vikingboat.png",
+      "text": "Zbliżamy się do wyspy legend. Tylko nieliczni tam dotarli.",
+      "choices": [
+        { "text": "Brzmi ekscytująco – chcę poznać tę wyspę!", "next": "scene_lodz_wikingow_4", "affection": 3 },
+        { "text": "Nie wiem, czy to bezpieczne...", "next": "scene_lodz_wikingow_4", "affection": 0 },
+        { "text": "Może zawróćmy, to zbyt ryzykowne.", "next": "scene_lodz_wikingow_4", "affection": -2 }
+      ]
+    }
+  ]
+},
+"scene_lodz_wikingow_4": {
+  "id": "scene_lodz_wikingow_4",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/vikingboat.png",
+      "text": "Twoja odwaga została zapamiętana. Przyszłość przyniesie nam jeszcze więcej przygód.",
+      "choices": [
+        { "text": "Wracajmy i opowiedzmy naszą historię!", "affection": 0 },
+        { "text": "Zostańmy tu jeszcze chwilę – chcę poczuć ten klimat.", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_klub_spiewu_wikingow_1": {
+  "id": "scene_klub_spiewu_wikingow_1",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/karaoke.png",
+      "text": "Witaj w klubie śpiewu Wikingów! Tu opowiadamy historie pieśnią i mocą głosu.",
+      "choices": [
+        { "text": "Chętnie zaśpiewam z tobą!", "next": "scene_klub_spiewu_wikingow_2", "affection": 3 },
+        { "text": "Lubię słuchać, ale śpiewanie to nie moja bajka.", "next": "scene_klub_spiewu_wikingow_2", "affection": 1 },
+        { "text": "Może po prostu pooglądam występy.", "next": "scene_klub_spiewu_wikingow_2", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_klub_spiewu_wikingow_2": {
+  "id": "scene_klub_spiewu_wikingow_2",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/karaoke.png",
+      "text": "Śpiew łączy nas jak braterstwo. Słyszysz ten potężny ryk? To duch dawnych wojowników!",
+      "choices": [
+        { "text": "Czuję ich siłę, to niesamowite!", "next": "scene_klub_spiewu_wikingow_3", "affection": 3 },
+        { "text": "To wszystko brzmi trochę przerażająco.", "next": "scene_klub_spiewu_wikingow_3", "affection": 0 },
+        { "text": "Może spróbuję zaśpiewać jeszcze raz.", "next": "scene_klub_spiewu_wikingow_3", "affection": 1 }
+      ]
+    }
+  ]
+},
+"scene_klub_spiewu_wikingow_3": {
+  "id": "scene_klub_spiewu_wikingow_3",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/karaoke.png",
+      "text": "Prawdziwy wojownik nie boi się wyrażać siebie. Gotów na kolejne wyzwania?",
+      "choices": [
+        { "text": "Zawsze gotów!", "next": "scene_klub_spiewu_wikingow_4", "affection": 3 },
+        { "text": "Może później, chcę się jeszcze poobserwować.", "next": "scene_klub_spiewu_wikingow_4", "affection": 1 },
+        { "text": "Chyba czas wracać do codzienności.", "next": "scene_klub_spiewu_wikingow_4", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_klub_spiewu_wikingow_4": {
+  "id": "scene_klub_spiewu_wikingow_4",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/karaoke.png",
+      "text": "To była udana noc. Co teraz, przyjacielu?",
+      "choices": [
+        { "text": "Pora na wyprawę łodzią wikingów!", "affection": 0 },
+        { "text": "Chcę jeszcze odwiedzić saunę.", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_sypialnia_bjorn_1": {
+  "id": "scene_sypialnia_bjorn_1",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/bedroom.png",
+      "text": "Moja sypialnia to miejsce spokoju po długim dniu walki i przygód. Chcesz odpocząć i porozmawiać?",
+      "choices": [
+        { "text": "Tak, chętnie usiądę i posłucham.", "next": "scene_sypialnia_bjorn_2", "affection": 3 },
+        { "text": "Może później, chcę jeszcze trochę się rozejrzeć.", "next": "scene_sypialnia_bjorn_2", "affection": 1 },
+        { "text": "Wolałbym zostać na zewnątrz.", "next": "scene_sypialnia_bjorn_2", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_sypialnia_bjorn_2": {
+  "id": "scene_sypialnia_bjorn_2",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/bedroom.png",
+      "text": "To tutaj gromadzę siły i planuję kolejne wyzwania. Czasem lubię po prostu milczeć i patrzeć w ogień.",
+      "choices": [
+        { "text": "Opowiedz mi o swoich planach.", "next": "scene_sypialnia_bjorn_3", "affection": 2 },
+        { "text": "Milczenie też ma swój urok.", "next": "scene_sypialnia_bjorn_3", "affection": 1 },
+        { "text": "Może wrócimy do przygody?", "next": "scene_sypialnia_bjorn_3", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_sypialnia_bjorn_3": {
+  "id": "scene_sypialnia_bjorn_3",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/bedroom.png",
+      "text": "Wikingowie nie spoczywają długo. Jutro czekają nas kolejne wyzwania i chwile chwały.",
+      "choices": [
+        { "text": "Jestem gotów, ruszajmy dalej!", "affection": 3 },
+        { "text": "Potrzebuję jeszcze chwili wytchnienia.", "affection": 1 },
+        { "text": "Może odpocznijmy tu trochę dłużej.", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_piwnica_bjorn_1": {
+  "id": "scene_piwnica_bjorn_1",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/basement.png",
+      "text": "W mojej piwnicy przechowuję najcenniejsze skarby i narzędzia wojownika. Co chcesz zobaczyć najpierw?",
+      "choices": [
+        { "text": "Pokaż mi swoje najlepsze siekiery.", "next": "scene_piwnica_bjorn_2", "affection": 3 },
+        { "text": "Chętnie zobaczę starożytne artefakty.", "next": "scene_piwnica_bjorn_2", "affection": 2 },
+        { "text": "Może jest tu coś do jedzenia i picia?", "next": "scene_piwnica_bjorn_2", "affection": 1 }
+      ]
+    }
+  ]
+},
+"scene_piwnica_bjorn_2": {
+  "id": "scene_piwnica_bjorn_2",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/basement.png",
+      "text": "Każdy przedmiot tutaj ma swoją historię i wartość. Czujesz ducha przeszłości, prawda?",
+      "choices": [
+        { "text": "Tak, to niesamowite miejsce.", "next": "scene_piwnica_bjorn_3", "affection": 3 },
+        { "text": "Jest tu trochę mrocznie, ale ciekawe.", "next": "scene_piwnica_bjorn_3", "affection": 1 },
+        { "text": "Chodźmy stąd, wolę światło dnia.", "next": "scene_piwnica_bjorn_3", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_piwnica_bjorn_3": {
+  "id": "scene_piwnica_bjorn_3",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/basement.png",
+      "text": "Przygoda nigdy się nie kończy. Gdzie teraz chcesz się udać?",
+      "choices": [
+        { "text": "Wróćmy na ulicę.", "affection": 0 },
+        { "text": "Chodźmy do sauny.", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_krag_z_krukami_1": {
+  "id": "scene_krag_z_krukami_1",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/site.png",
+      "text": "Krąg z krukami Odyna to miejsce pełne mocy i tajemnic. Czujesz ten dreszcz przygody?",
+      "choices": [
+        { "text": "Tak, chcę dołączyć do rytuału.", "next": "scene_krag_z_krukami_2", "affection": 3 },
+        { "text": "Może poczekam i się rozejrzę.", "next": "scene_krag_z_krukami_2", "affection": 1 },
+        { "text": "To miejsce wydaje się zbyt mistyczne dla mnie.", "next": "scene_krag_z_krukami_2", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_krag_z_krukami_2": {
+  "id": "scene_krag_z_krukami_2",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/site.png",
+      "text": "Wkraczamy do kręgu, a kruki Odyna krążą nad nami. To czas wyzwań i nowych więzi.",
+      "choices": [
+        { "text": "Jestem gotów na wszystko.", "next": "scene_krag_z_krukami_3", "affection": 3 },
+        { "text": "Nie wiem, czy podołam.", "next": "scene_krag_z_krukami_3", "affection": 1 },
+        { "text": "Może lepiej wróćmy.", "next": "scene_sauna_4", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_krag_z_krukami_3": {
+  "id": "scene_krag_z_krukami_3",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/site.png",
+      "text": "Duchy przeszłości i przyszłości łączą się tutaj. Co wybierasz – siłę, mądrość czy odwagę?",
+      "choices": [
+        { "text": "Siłę, by walczyć u twojego boku.", "next": "scene_krag_z_krukami_4", "affection": 4 },
+        { "text": "Mądrość, by podejmować najlepsze decyzje.", "next": "scene_krag_z_krukami_4", "affection": 3 },
+        { "text": "Odwagę, by stawić czoła nieznanemu.", "next": "scene_krag_z_krukami_4", "affection": 2 }
+      ]
+    }
+  ]
+},
+"scene_krag_z_krukami_4": {
+  "id": "scene_krag_z_krukami_4",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/site.png",
+      "text": "Twoja decyzja jest godna wojownika. Czas wrócić do codzienności, ale pamiętaj o krukach Odyna.",
+      "choices": [
+        { "text": "Wracamy do ulicy.", "affection": 0 },
+        { "text": "Chcę jeszcze chwilę pobyć tutaj.", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_zrodla_termalne_1": {
+  "id": "scene_zrodla_termalne_1",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/springs.png",
+      "text": "Źródła termalne to idealne miejsce na relaks i regenerację. Czujesz jak ciepła woda koi twoje ciało?",
+      "choices": [
+        { "text": "Tak, chcę się całkowicie zrelaksować.", "next": "scene_zrodla_termalne_2", "affection": 3 },
+        { "text": "Wolę obserwować, może spróbuję później.", "next": "scene_zrodla_termalne_2", "affection": 1 },
+        { "text": "Nie jestem pewien, czy to miejsce dla mnie.", "next": "scene_zrodla_termalne_2", "affection": 0 }
+      ]
+    }
+  ]
+},
+"scene_zrodla_termalne_2": {
+  "id": "scene_zrodla_termalne_2",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/springs.png",
+      "text": "Woda ma magiczne właściwości, które wzmacniają ducha wojownika. Co chciałbyś zrobić dalej?",
+      "choices": [
+        { "text": "Popłyńmy po okolicy łodzią wikingów.", "next": "scene_lodz_wikingow_1", "affection": 2 },
+        { "text": "Może odwiedzimy klub śpiewu Wikingów?", "next": "scene_klub_spiewu_wikingow_1", "affection": 1 },
+        { "text": "Chcę jeszcze trochę odpocząć tutaj.", "next": "scene_zrodla_termalne_3", "affection": 3 }
+      ]
+    }
+  ]
+},
+"scene_zrodla_termalne_3": {
+  "id": "scene_zrodla_termalne_3",
+  "lines": [
+    {
+      "character": "Bjørn",
+      "background": "assets/scenes/springs.png",
+      "text": "Relaks jest równie ważny jak walka. Czuj się jak w domu, przyjacielu.",
+      "choices": [
+        { "text": "Dziękuję, to był dobry wybór.", "affection": 3 },
+        { "text": "Czas ruszać dalej.", "affection": 1 }
+      ]
+    }
+  ]
 }
-
+}
+}

@@ -4,6 +4,7 @@
   <link rel="icon" href="data:,">
   <meta charset = "utf-8">
   <link rel="stylesheet", href = "styles/style.css">
+  <link rel="stylesheet", href = "styles/AAllowbox.css">
   <link rel="stylesheet", href = "styles/datingSim.css">
   <title>BjörnHub</title>
   
@@ -11,6 +12,33 @@
 </head>
 
 <body>  
+  <audio loop id = "BjornSong">
+      <source src="assets/Start.mp3" type="audio/mpeg"> 
+  </audio>
+  <div class="AAllowBox" id="AAllowBox">
+
+      <p>This page requires audio in order to provide intended experience.</p>
+    <div class ="bbox">
+    <button id="audioBtn" class="audioBtn">Go</button>
+    <button id="leaveBtn" class="audioBtn">Leave Page</button>
+    </div>
+  </div>
+  <script>
+  const startBtn = document.getElementById('audioBtn');
+  
+  const audio = document.getElementById('BjornSong');
+  const box = document.getElementById('AAllowBox');
+  const leaveBtn = document.getElementById('leaveBtn');
+  startBtn.addEventListener('click', () => {
+    audio.play()
+    startBtn.style.display = 'none';
+    box.style.display = 'none';
+  });
+  leaveBtn.addEventListener('click', () => {
+    window.location.href = "https://www.google.com"
+  }); 
+  </script>
+
   <header>
       <nav>
         <div><a href="index.html">Home</a></div>

@@ -1,4 +1,4 @@
-#signInDialog {
+#signInDialog, #signUpDialog {
     position: relative;
     padding: 15px 40px 40px 40px;
     border: 2px solid #ac4402;
@@ -6,15 +6,13 @@
     background-color: rgba(20, 20, 20, 0.95);
 }
 
-#signUpDialog {
-    position: relative;
-    padding: 15px 40px 40px 40px;
-    border: 2px solid #ac4402;
-    border-radius: 10px;
-    background-color: rgba(20, 20, 20, 0.95);
+header .login button,
+#darkmode {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
-
-
 #signInDialog::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
@@ -100,4 +98,12 @@ header .login button:hover{
   transition: ease-in-out 0.4s;
   border: 2px solid #bc5512;
   cursor: pointer;
+}
+#darkmode{
+  background-image: url(../assets/darkmode.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  width: 30px;
+  height: 30px;
 }

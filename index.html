@@ -3,7 +3,7 @@
 <head>
   <link rel="icon" href="data:,">
   <meta charset = "utf-8">
-  <link rel="stylesheet", href = "styles/style.css">
+  <link rel="stylesheet", href = "styles/style.css", id="themeStylesheet">
   <link rel="stylesheet", href = "styles/AAllowbox.css">
   <link rel="stylesheet", href = "styles/carousell.css">
   <link rel="stylesheet", href = "styles/gallery.css">
@@ -38,7 +38,19 @@
   });
   leaveBtn.addEventListener('click', () => {
     window.location.href = "https://www.google.com"
-  });
+  }); 
+
+  function toggleTheme() {
+    const themeLink = document.getElementById('themeStylesheet');
+    const currentTheme = themeLink.getAttribute('href');
+
+    if (currentTheme === 'styles/light.css') {
+      themeLink.setAttribute('href', 'styles/style.css');
+    } 
+    else{
+      themeLink.setAttribute('href', 'styles/light.css');
+    }
+  }
 </script>
     
   <dialog id="signInDialog">
@@ -69,6 +81,7 @@
         <div class="login">
           <button type="button" id="signInButton">Sign In</button>
           <button type="button" id="signUpButton">Sign Up</button>
+          <button onclick="toggleTheme()" id="darkmode"></button>
         </div> 
       </div>
 
