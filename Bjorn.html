@@ -19,12 +19,14 @@
         <button onclick="toggleTheme()" id="darkmode"></button>
       </div> 
     </div>
-
     <nav>
-      <div><a href="index.html">Home</a></div>
-      <div><a href="bjornStars.html">Björnstars</a></div>
-      <div><a href="datingSim.html">Dating Sim</a></div>
-      <div><a>Community</a></div>
+      <div class="unrollBox">&#9776;</div>
+      <div class="nav-links">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="bjornStars.html">Björnstars</a></div>
+        <div><a href="datingSim.html">Dating Sim</a></div>
+        <div><a>Community</a></div>
+      </div>
     </nav>
   </header>
   
@@ -55,19 +57,20 @@
   </dialog>
 </body>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const img = params.get("img");
-    const path="assets/imgs/"
-
-    if(img){  
-      document.getElementById("selected-bjorn").src = `${path}${img}`;
-    } 
-    else{
-      document.getElementById("selected-bjorn").alt = "No image selected";
-    }
-  </script>
-  <script src="scripts/sign.js"></script>
-  <script src="scripts/brightness.js"></script>
+<script> 
+  const params = new URLSearchParams(window.location.search);
+  const img = params.get("img");
+  const path="assets/imgs/"
+    
+  if(img){  
+    document.getElementById("selected-bjorn").src = `${path}${img}`;
+  } 
+  else{
+    document.getElementById("selected-bjorn").alt = "No image selected";
+  }
+</script>
+<script src="scripts/unroll.js"></script>
+<script src="scripts/sign.js"></script>
+<script src="scripts/brightness.js"></script>
 </html>
 

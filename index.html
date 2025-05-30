@@ -23,23 +23,26 @@
     </div>
   </div> 
 
- <header>  
-      <div class="master">
-        <div class="logo"><img src="assets/BhubTS.png" alt="Logo"></div>
-        <div class="search"><input id="search_tag" type="text" name="search" placeholder="Search by Tag"></div>
-        <div class="login">
-          <button type="button" id="signInButton">Sign In</button>
-          <button type="button" id="signUpButton">Sign Up</button>
-          <button onclick="toggleTheme()" id="darkmode"></button>
-        </div> 
-      </div>
-
-      <nav>
-        <div class="current"><a>Home</a></div>
+  <header>  
+    <div class="master">
+      <div class="logo"><img src="assets/BhubTS.png" alt="Logo"></div>
+      <div class="search"><input id="search_tag" type="text" name="search" placeholder="Search by Tag"></div>
+      <div class="login">
+        <button type="button" id="signInButton">Sign In</button>
+        <button type="button" id="signUpButton">Sign Up</button>
+        <button onclick="toggleTheme()" id="darkmode"></button>
+      </div> 
+    </div>
+    <nav>
+      <div class="unrollBox">&#9776;</div>
+      <div class="nav-links">
+        <div><a href="index.html">Home</a></div>
         <div><a href="bjornStars.html">Björnstars</a></div>
         <div><a href="datingSim.html">Dating Sim</a></div>
         <div><a>Community</a></div>
-      </nav>
+      </div>
+    </nav>
+
   </header>
 
   <main>
@@ -93,5 +96,6 @@
 <script src="scripts/gallery.js?v=<%= Date.now() %>"></script>
 <script src="scripts/sign.js?v=<%= Date.now() %>"></script>
 <script src="scripts/brightness.js"></script>
+<script src="scripts/unroll.js"></script>
 <script src="scripts/allow.js"></script>
 </html> 
