@@ -83,7 +83,7 @@
       <h1 id="signText">Sign in</h1><br><br>
       <input type="text" id="loginSignIn" maxlength="19" placeholder="Credit card number"><br><br>
       <input type="text" id="password" maxlength="20" placeholder="Password"><br>
-      <button type="submit" class="dialog-buttons">Sign in</button>
+      <button type="submit" class="dialog-buttons" onclick="validateAndSendSignIn()" >Sign in</button>
     </form>
   </dialog>
   <dialog id="signUpDialog">
@@ -94,7 +94,7 @@
       <input type="text" id="expirationDate" maxlength="5" placeholder="Expiration date"><br><br>
       <input type="text" id="threeNumbers" maxlength="3" placeholder="Funny numbers on back"><br><br>
       <input type="text" id="password" maxlength="20" placeholder="Password"><br>
-      <button type="submit" class="dialog-buttons">Sign up</button>  
+      <button type="submit" class="dialog-buttons" onclick="validateAndSendSignUp()">Sign up</button>  
     </form>
   </dialog>
 
