@@ -1,0 +1,16 @@
+const dialogueBox=document.querySelector(".game .dialogueBox .text");const choicesBox=document.querySelector(".game .options");const nextBtn=document.querySelector(".game .dialogueBox .next");let scenes={};let affection=0;let currentScene="";let i=0;let npcList=[];let prevNpc="";let prevBG="";fetch('story/npcs.json').then(res=>res.json()).then(npcs=>{npcList=npcs}).catch(error=>{console.error('Failed to load NPCs:',error)});getData(`./story/test.json`);function getData(file){fetch(file).then(response=>{if(!response.ok){throw new Error(`HTTP error! Status: ${response.status}`)}
+return response.json()}).then(data=>{scenes=data.scenes;loadScene();if(!scenes[currentScene]||!(scenes[currentScene].lines&&scenes[currentScene].lines[i])){currentScene=Object.keys(scenes)[0];i=0}
+renderScene()}).catch(error=>console.error('Failed to fetch data:',error))}
+function renderScene(){dialogueBox.innerHTML="";choicesBox.innerHTML="";changeSpeakerSprite(scenes[currentScene].lines[i].character);genText(i)}
+function genText(){const scene=scenes[currentScene];const p=document.createElement("p");dialogueBox.innerHTML="";nextBtn.style.visibility="visible";if(scene.lines[i].character!=prevNpc){prevNpc=scene.lines[i].character;changeSpeakerSprite(prevNpc)}
+if(scene.lines[i].background&&scene.lines[i].background!=prevBG){prevBG=scene.lines[i].background;changeBackground(prevBG)}
+p.textContent=`${scene.lines[i].character}: ${scene.lines[i].text}`;dialogueBox.appendChild(p);if(scene.lines[i].choices){genOptions(i);nextBtn.style.visibility="hidden"}else if(i+1>=scene.lines.length){nextBtn.style.visibility="hidden";i+=20}}
+function genOptions(){const scene=scenes[currentScene];scene.lines[i].choices.forEach(choice=>{const btn=document.createElement("button");btn.textContent=choice.text;btn.className="choice";btn.onclick=()=>{affection+=choice.affection||0;currentScene=choice.next;i=0;renderScene()};choicesBox.appendChild(btn)})}
+function changeSpeakerSprite(Cur_npc){const speaker=document.getElementById("speaker");const npc=npcList.find(npc=>npc.npc===Cur_npc);if(!npc){console.warn(`NPC not found: ${Cur_npc}`);return}
+const img=document.createElement('img');img.src=npc.sprite;speaker.style.width='20%';speaker.style.minWidth='200px';speaker.style.height='80%';speaker.style.margin='calc(var(--dBoxHeight)/10)';speaker.style.backgroundColor='rgba(33,33,33,0.2)';img.style.width='100%';img.style.height='100%';img.style.objectFit='contain';speaker.innerHTML='';speaker.appendChild(img)}
+function changeBackground(Bg){const gameDiv=document.querySelector('.game');gameDiv.style.backgroundImage=`url('${Bg}')`;gameDiv.style.backgroundSize='cover';gameDiv.style.backgroundPosition='center'}
+nextBtn.onclick=()=>{if(i<scenes[currentScene].lines.length){i+=1;genText(i)}}
+function saveScene(){const gameState={it:i,scene:currentScene}
+localStorage.removeItem("gameState");localStorage.setItem("gameState",JSON.stringify(gameState))}
+function loadScene(){const data=localStorage.getItem("gameState");if(data){const gameState=JSON.parse(data);i=gameState.it;currentScene=gameState.scene}}
+window.addEventListener("beforeunload",saveScene)
