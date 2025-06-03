@@ -62,22 +62,45 @@
 
     const signInButton = document.getElementById('signInButton');
     const signUpButton = document.getElementById('signUpButton');
+    const signInDialog = document.getElementById('signInDialog');
+    const signUpDialog = document.getElementById('signUpDialog');
+    const closeSignIn = document.getElementById('closeSignIn');
+    const closeSignUp = document.getElementById('closeSignUp');
 
-    signInButton.addEventListener('click', function(){
-      signInDialog.showModal();
-    });
+ function showDialog(dialog) {
+  if (!dialog.open) {
+    dialog.showModal(); // Actually shows the dialog
+  }
 
-    signUpButton.addEventListener('click', function(){
-      signUpDialog.showModal();
-    });
+  dialog.classList.remove('closing');
+  dialog.classList.add('show');
+}
 
-    closeSignIn.addEventListener('click', function(){
-      signInDialog.close();
-    });
 
-    closeSignUp.addEventListener('click', function(){
-      signUpDialog.close();
-    });
+function closeDialog(dialog) {
+  dialog.classList.add('closing');
+
+  dialog.addEventListener('animationend', function handleClose() {
+    dialog.classList.remove('show', 'closing');
+    dialog.close(); // Actually hides the dialog
+    dialog.removeEventListener('animationend', handleClose);
+  });
+}
+signInDialog.addEventListener('cancel', (e) => {
+  e.preventDefault(); // Prevent immediate close
+  closeDialog(signInDialog);
+});
+
+signUpDialog.addEventListener('cancel', (e) => {
+  e.preventDefault();
+  closeDialog(signUpDialog);
+});
+
+signInButton.addEventListener('click', () => showDialog(signInDialog));
+signUpButton.addEventListener('click', () => showDialog(signUpDialog));
+closeSignIn.addEventListener('click', () => closeDialog(signInDialog));
+closeSignUp.addEventListener('click', () => closeDialog(signUpDialog));
+
 function validateAndSendSignIn() {
   const cardInput = document.getElementById('loginSignIn').value.replace(/\s/g, '');
   const passwordInput = document.querySelector('#signInDialog input[placeholder="Password"]').value;

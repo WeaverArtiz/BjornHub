@@ -11,8 +11,8 @@
   <link rel="stylesheet", href = "styles/gallery.css">
   -->  
   <link rel="stylesheet" href="styles/minified/style_m.css" id="themeStylesheet">
-  <link rel="stylesheet", href = "styles/minified/sign_m.css">
-  <link rel="stylesheet", href = "styles/minified/AAllowbox_m.css">
+  <link rel="stylesheet", href = "styles/sign.css">
+  <link rel="stylesheet", href = "styles/AAllowbox.css">
   <link rel="stylesheet", href = "styles/minified/carousell_m.css">
   <link rel="stylesheet", href = "styles/minified/gallery_m.css">
   <title>BjörnHub</title>
@@ -21,14 +21,7 @@
 </head>
 
 <body>   
-  <audio loop id = "BjornSong"><source src="assets/Start.mp3" type="audio/mpeg"> </audio>  
-  <div class="AAllowBox" id="AAllowBox">
-      <p>This page requires audio in order to provide intended experience.</p>
-    <div class ="bbox">
-    <button id="audioBtn" class="audioBtn">Go</button>
-    <button id="leaveBtn" class="audioBtn">Leave Page</button>
-    </div>
-  </div> 
+
 
   <header>  
     <div class="master">
@@ -76,7 +69,18 @@
       <h3> BjörnHub © 2025 </h3>   
     </div>
   </footer>  
+    <!--------------------- Allow for music to play ---------------------------->
+  <audio loop id = "BjornSong"><source src="assets/Start.mp3" type="audio/mpeg"> </audio>  
+  <div class="overlay visible" id="overlay"></div>
+  <div class="AAllowBox visible" id="AAllowBox">
+      <p>This page requires audio in order to provide intended experience.</p>
+    <div class ="bbox">
+    <button id="audioBtn" class="audioBtn">Go</button>
+    <button id="leaveBtn" class="audioBtn">Leave Page</button>
+    </div>
+  </div> 
   
+    <!--------------------- Sign in / up dialog  ---------------------------->
   <dialog id="signInDialog">
     <form method="dialog">
       <button type="button" id="closeSignIn" class="close-buttons">x</button>
@@ -108,8 +112,8 @@
 <script src="scripts/allow.js"></script>
 -->
 <script src="scripts/minified/gallery_m.js"></script>
-<script src="scripts/minified/sign_m.js"></script>
+<script src="scripts/sign.js"></script>
 <script src="scripts/minified/brightness_m.js"></script>
 <script src="scripts/minified/unroll_m.js"></script>
-<script src="scripts/minified/allow_m.js"></script>
+<script src="scripts/allow.js"></script>
 </html> 
